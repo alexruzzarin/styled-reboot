@@ -7,8 +7,10 @@ Bootstrap 4 reboot.css for styled-components
 
 Also see [styled-reset](https://github.com/zacanger/styled-reset/)
 from [Zac Anger](https://github.com/zacanger)
+
 &&
-Also see [styled-normalize](https://www.npmjs.com/package/styled-normalize)
+
+also see [styled-normalize](https://www.npmjs.com/package/styled-normalize)
 from [LestaD](https://github.com/LestaD).
 
 --------
@@ -72,4 +74,4 @@ Bootstrap is released under the MIT License.
 
 ## License:
 
-[WTFPL](./LICENSE.md)
+[MIT](./LICENSE.md)
