@@ -1,6 +1,6 @@
 {
   "name": "styled-reboot",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Bootstrap 4 reboot.css for styled-components",
   "main": "lib/index.js",
   "jsnext:main": "dist/styled-reboot.es.js",
