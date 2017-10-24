@@ -24,6 +24,25 @@ from [LestaD](https://github.com/LestaD).
 import { injectGlobal } from 'styled-components'
 import reboot from 'styled-reboot'
 
+const options = {
+  fontFamilyBase:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  fontSizeBase: '1rem',
+  fontWeightBase: 'normal',
+  lineHeightBase: 1.5,
+  bodyColor: '#212529',
+  bodyBg: '#fff',
+  headingsMarginBottom: '.5rem',
+  paragraphMarginBottom: '1rem',
+  dtFontWeight: 'bold',
+  linkColor: '#007bff',
+  linkDecoration: 'none',
+  linkHoverColor: '#0056b3',
+  linkHoverDecoration: 'underline',
+  tableCellPadding: '.75rem',
+  textMuted: '#868e96'
+}
+
 const rebootCss = reboot(/* options */)
 
 const baseStyles = () => injectGlobal`

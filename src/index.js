@@ -1,22 +1,43 @@
 import { css } from 'styled-components';
 
-const reboot = (
-  fontFamilyBase = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-  fontSizeBase = '1rem',
-  fontWeightBase = 'normal',
-  lineHeightBase = 1.5,
-  bodyColor = '#212529',
-  bodyBg = '#fff',
-  headingsMarginBottom = '.5rem',
-  paragraphMarginBottom = '1rem',
-  dtFontWeight = 'bold',
-  linkColor = '#007bff',
-  linkDecoration = 'none',
-  linkHoverColor = '#0056b3',
-  linkHoverDecoration = 'underline',
-  tableCellPadding = '.75rem',
-  textMuted = '#868e96'
-) => {
+const defaultOptions = {
+  fontFamilyBase:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  fontSizeBase: '1rem',
+  fontWeightBase: 'normal',
+  lineHeightBase: 1.5,
+  bodyColor: '#212529',
+  bodyBg: '#fff',
+  headingsMarginBottom: '.5rem',
+  paragraphMarginBottom: '1rem',
+  dtFontWeight: 'bold',
+  linkColor: '#007bff',
+  linkDecoration: 'none',
+  linkHoverColor: '#0056b3',
+  linkHoverDecoration: 'underline',
+  tableCellPadding: '.75rem',
+  textMuted: '#868e96'
+};
+
+const reboot = options => {
+  const {
+    fontFamilyBase,
+    fontSizeBase,
+    fontWeightBase,
+    lineHeightBase,
+    bodyColor,
+    bodyBg,
+    headingsMarginBottom,
+    paragraphMarginBottom,
+    dtFontWeight,
+    linkColor,
+    linkDecoration,
+    linkHoverColor,
+    linkHoverDecoration,
+    tableCellPadding,
+    textMuted
+  } = Object.assign({}, defaultOptions, options);
+
   const rebootCss = css`
     *,
     *::before,
