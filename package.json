@@ -1,0 +1,67 @@
+{
+  "name": "styled-reboot",
+  "version": "0.0.1",
+  "description": "Bootstrap 4 reboot.css for styled-components",
+  "main": "lib/index.js",
+  "jsnext:main": "dist/styled-reboot.es.js",
+  "module": "dist/styled-reboot.es.js",
+  "scripts": {
+    "lint:css": "stylelint './src/**/*.js'",
+    "lint:js": "eslint .",
+    "test": "npm run lint:css && npm run lint:js",
+    "prebuild": "npm run test",
+    "build:lib": "babel --out-dir lib src",
+    "build:dist": "rollup -c && rollup -c --environment ESBUNDLE && rollup -c --environment PRODUCTION",
+    "build": "npm run build:lib && npm run build:dist",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexruzzarin/styled-reboot.git"
+  },
+  "keywords": [
+    "styled",
+    "components",
+    "css",
+    "reboot",
+    "reboot.css",
+    "bootstrap"
+  ],
+  "author": "http://pager.com <alex@pager.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexruzzarin/styled-reboot/issues"
+  },
+  "homepage": "https://github.com/alexruzzarin/styled-reboot#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "8.0.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "4.9.0",
+    "eslint-config-google": "0.9.1",
+    "eslint-config-prettier": "2.6.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-prettier": "2.3.1",
+    "eslint-plugin-react": "7.4.0",
+    "prettier": "1.7.4",
+    "react": "^16.0.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.4",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "styled-components": "^2.2.1",
+    "stylelint": "8.2.0",
+    "stylelint-config-standard": "17.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.0.0"
+  },
+  "peerDependencies": {
+    "styled-components": "2.x"
+  }
+}
