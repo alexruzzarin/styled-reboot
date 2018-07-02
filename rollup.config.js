@@ -1,7 +1,7 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-import uglify from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 import pkg from './package.json';
 
 const prod = process.env.PRODUCTION;
@@ -22,7 +22,12 @@ if (prod) {
 const plugins = [
   nodeResolve(),
   commonjs({
-    ignoreGlobal: true
+    ignoreGlobal: true,
+    include: 'node_modules/**',
+    // See https://stackoverflow.com/a/50098540/66851
+    namedExports: {
+      'node_modules/react-is/index.js': ['isValidElementType']
+    }
   }),
   babel({
     babelrc: false,
