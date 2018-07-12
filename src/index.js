@@ -3,25 +3,28 @@ import { css } from 'styled-components';
 const defaultOptions = {
   fontFamilyBase:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  fontFamilyMonospace:
+    "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
   fontSizeBase: '1rem',
-  fontWeightBase: 'normal',
+  fontWeightBase: 400,
   lineHeightBase: 1.5,
   bodyColor: '#212529',
   bodyBg: '#fff',
   headingsMarginBottom: '.5rem',
   paragraphMarginBottom: '1rem',
-  dtFontWeight: 'bold',
+  dtFontWeight: 700,
   linkColor: '#007bff',
   linkDecoration: 'none',
   linkHoverColor: '#0056b3',
   linkHoverDecoration: 'underline',
   tableCellPadding: '.75rem',
-  textMuted: '#868e96'
+  textMuted: '#6c757d'
 };
 
 const reboot = options => {
   const {
     fontFamilyBase,
+    fontFamilyMonospace,
     fontSizeBase,
     fontWeightBase,
     lineHeightBase,
@@ -48,13 +51,18 @@ const reboot = options => {
     html {
       font-family: sans-serif;
       line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
       -ms-overflow-style: scrollbar;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @-ms-viewport {
+      width: device-width;
     }
 
     article,
     aside,
-    dialog,
     figcaption,
     figure,
     footer,
@@ -78,7 +86,7 @@ const reboot = options => {
     }
 
     [tabindex='-1']:focus {
-      outline: none !important;
+      outline: 0 !important;
     }
 
     hr {
@@ -105,6 +113,7 @@ const reboot = options => {
     abbr[title],
     abbr[data-original-title] {
       text-decoration: underline;
+      -webkit-text-decoration: underline dotted;
       text-decoration: underline dotted;
       cursor: help;
       border-bottom: 0;
@@ -176,6 +185,7 @@ const reboot = options => {
       color: ${linkColor};
       text-decoration: ${linkDecoration};
       background-color: transparent;
+      -webkit-text-decoration-skip: objects;
 
       &:hover {
         color: ${linkHoverColor};
@@ -202,7 +212,7 @@ const reboot = options => {
     code,
     kbd,
     samp {
-      font-family: monospace;
+      font-family: ${fontFamilyMonospace};
       font-size: 1em;
     }
 
@@ -224,18 +234,6 @@ const reboot = options => {
 
     svg:not(:root) {
       overflow: hidden;
-    }
-
-    a,
-    area,
-    button,
-    [role='button'],
-    input:not([type='range']),
-    label,
-    select,
-    summary,
-    textarea {
-      touch-action: manipulation;
     }
 
     table {
@@ -289,6 +287,13 @@ const reboot = options => {
       text-transform: none;
     }
 
+    button,
+    html [type='button'],
+    [type='reset'],
+    [type='submit'] {
+      -webkit-appearance: button;
+    }
+
     button::-moz-focus-inner,
     [type='button']::-moz-focus-inner,
     [type='reset']::-moz-focus-inner,
@@ -301,6 +306,13 @@ const reboot = options => {
     input[type='checkbox'] {
       box-sizing: border-box;
       padding: 0;
+    }
+
+    input[type='date'],
+    input[type='time'],
+    input[type='datetime-local'],
+    input[type='month'] {
+      -webkit-appearance: listbox;
     }
 
     textarea {
@@ -338,10 +350,17 @@ const reboot = options => {
 
     [type='search'] {
       outline-offset: -2px;
+      -webkit-appearance: none;
+    }
+
+    [type='search']::-webkit-search-cancel-button,
+    [type='search']::-webkit-search-decoration {
+      -webkit-appearance: none;
     }
 
     ::-webkit-file-upload-button {
       font: inherit;
+      -webkit-appearance: button;
     }
 
     output {
@@ -350,6 +369,7 @@ const reboot = options => {
 
     summary {
       display: list-item;
+      cursor: pointer;
     }
 
     template {

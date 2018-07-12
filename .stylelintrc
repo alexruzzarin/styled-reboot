@@ -4,5 +4,10 @@
     "stylelint-config-standard",
     "stylelint-config-styled-components"
   ],
+  "rules": {
+    "declaration-block-no-duplicate-properties": null,
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": null
+  },
   "syntax": "scss"
 }
