@@ -1,28 +1,31 @@
 import { css } from 'styled-components';
 
 const defaultOptions = {
+  black: '#000',
   fontFamilyBase:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
   fontFamilyMonospace:
-    "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+    'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   fontSizeBase: '1rem',
   fontWeightBase: 400,
   lineHeightBase: 1.5,
   bodyColor: '#212529',
   bodyBg: '#fff',
-  headingsMarginBottom: '.5rem',
+  headingsMarginBottom: '0.5rem',
   paragraphMarginBottom: '1rem',
+  labelMarginBottom: '0.5rem',
   dtFontWeight: 700,
   linkColor: '#007bff',
   linkDecoration: 'none',
   linkHoverColor: '#0056b3',
   linkHoverDecoration: 'underline',
-  tableCellPadding: '.75rem',
+  tableCellPadding: '0.75rem',
   textMuted: '#6c757d'
 };
 
-const reboot = options => {
+export const reboot = options => {
   const {
+    black,
     fontFamilyBase,
     fontFamilyMonospace,
     fontSizeBase,
@@ -38,7 +41,8 @@ const reboot = options => {
     linkHoverColor,
     linkHoverDecoration,
     tableCellPadding,
-    textMuted
+    textMuted,
+    labelMarginBottom
   } = Object.assign({}, defaultOptions, options);
 
   const rebootCss = css`
@@ -54,7 +58,7 @@ const reboot = options => {
       -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
       -ms-overflow-style: scrollbar;
-      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: rgba(${black}, 0);
     }
 
     @-ms-viewport {
@@ -113,7 +117,6 @@ const reboot = options => {
     abbr[title],
     abbr[data-original-title] {
       text-decoration: underline;
-      -webkit-text-decoration: underline dotted;
       text-decoration: underline dotted;
       cursor: help;
       border-bottom: 0;
@@ -232,8 +235,9 @@ const reboot = options => {
       border-style: none;
     }
 
-    svg:not(:root) {
+    svg {
       overflow: hidden;
+      vertical-align: middle;
     }
 
     table {
@@ -254,7 +258,7 @@ const reboot = options => {
 
     label {
       display: inline-block;
-      margin-bottom: 0.5rem;
+      margin-bottom: ${labelMarginBottom};
     }
 
     button {
