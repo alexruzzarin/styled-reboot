@@ -1,6 +1,6 @@
 {
   "name": "styled-reboot",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Bootstrap 4 reboot.css for styled-components",
   "main": "dist/index.js",
   "files": [
