@@ -60,7 +60,7 @@
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-prettier": "3.0.0",
     "eslint-plugin-react": "7.11.1",
-    "prettier": "1.15.2",
+    "prettier": "1.15.3",
     "react": "16.6.3",
     "styled-components": "4.1.1",
     "stylelint": "9.8.0",
