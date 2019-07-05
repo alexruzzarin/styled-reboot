@@ -3,7 +3,7 @@
     "declaration": true,
     "declarationDir": ".",
     "esModuleInterop": true,
-    "module": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "jsx": "react",
