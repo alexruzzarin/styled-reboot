@@ -46,23 +46,23 @@
   "homepage": "https://github.com/alexruzzarin/styled-reboot#readme",
   "dependencies": {},
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.4",
-    "@semantic-release/git": "^7.0.16",
-    "@types/styled-components": "^4.1.16",
-    "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "^2.1.0",
+    "@semantic-release/changelog": "3.0.4",
+    "@semantic-release/git": "7.0.16",
+    "@types/styled-components": "4.1.16",
+    "commitizen": "3.1.1",
+    "cz-conventional-changelog": "2.1.0",
     "prettier": "1.18.2",
     "react": "16.8.6",
-    "semantic-release": "^15.13.18",
+    "semantic-release": "15.13.18",
     "styled-components": "4.3.2",
     "stylelint": "10.1.0",
     "stylelint-config-standard": "18.3.0",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-processor-styled-components": "1.8.0",
-    "tslint": "^5.18.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.5.2"
+    "tslint": "5.18.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-eslint-rules": "5.4.0",
+    "typescript": "3.5.2"
   },
   "peerDependencies": {
     "styled-components": ">3 <=5"
