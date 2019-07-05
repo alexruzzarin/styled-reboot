@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/alexruzzarin/styled-reboot/compare/v4.0.0...v4.0.1) (2019-07-05)
+
+
+### Bug Fixes
+
+* **tsc:** change target module to `commonjs` ([2a74541](https://github.com/alexruzzarin/styled-reboot/commit/2a74541))
+
 # [4.0.0](https://github.com/alexruzzarin/styled-reboot/compare/v3.0.2...v4.0.0) (2019-07-05)
 
 
