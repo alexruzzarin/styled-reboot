@@ -1,35 +1,61 @@
-import { css } from 'styled-components';
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 
-const defaultOptions = {
+interface IRebootOptions {
+  black?: string;
+  fontFamilyBase?: string;
+  fontFamilyMonospace?: string;
+  fontSizeBase?: string;
+  fontWeightBase?: number | string;
+  fontWeightBolder?: number | string;
+  lineHeightBase?: number;
+  bodyColor?: string;
+  bodyBg?: string;
+  headingsMarginBottom?: string;
+  paragraphMarginBottom?: string;
+  labelMarginBottom?: string;
+  dtFontWeight?: number | string;
+  linkColor?: string;
+  linkDecoration?: string;
+  linkHoverColor?: string;
+  linkHoverDecoration?: string;
+  tableCellPadding?: string;
+  tableCaptionColor?: string;
+  enablePointerCursorForButtons: boolean;
+}
+
+export const defaultRebootOptions: IRebootOptions = {
   black: '#000',
+  bodyBg: '#fff',
+  bodyColor: '#212529',
+  dtFontWeight: 700,
+  enablePointerCursorForButtons: true,
   fontFamilyBase:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
   fontFamilyMonospace:
     'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   fontSizeBase: '1rem',
   fontWeightBase: 400,
-  lineHeightBase: 1.5,
-  bodyColor: '#212529',
-  bodyBg: '#fff',
+  fontWeightBolder: 'bolder',
   headingsMarginBottom: '0.5rem',
-  paragraphMarginBottom: '1rem',
   labelMarginBottom: '0.5rem',
-  dtFontWeight: 700,
+  lineHeightBase: 1.5,
   linkColor: '#007bff',
   linkDecoration: 'none',
   linkHoverColor: '#0056b3',
   linkHoverDecoration: 'underline',
-  tableCellPadding: '0.75rem',
-  textMuted: '#6c757d'
+  paragraphMarginBottom: '1rem',
+  tableCaptionColor: '#6c757d',
+  tableCellPadding: '0.75rem'
 };
 
-export const reboot = options => {
+export const reboot = (options: IRebootOptions): FlattenSimpleInterpolation => {
   const {
     black,
     fontFamilyBase,
     fontFamilyMonospace,
     fontSizeBase,
     fontWeightBase,
+    fontWeightBolder,
     lineHeightBase,
     bodyColor,
     bodyBg,
@@ -41,9 +67,10 @@ export const reboot = options => {
     linkHoverColor,
     linkHoverDecoration,
     tableCellPadding,
-    textMuted,
-    labelMarginBottom
-  } = Object.assign({}, defaultOptions, options);
+    tableCaptionColor,
+    labelMarginBottom,
+    enablePointerCursorForButtons
+  } = { ...defaultRebootOptions, ...options };
 
   const rebootCss = css`
     *,
@@ -56,13 +83,7 @@ export const reboot = options => {
       font-family: sans-serif;
       line-height: 1.15;
       -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      -ms-overflow-style: scrollbar;
       -webkit-tap-highlight-color: rgba(${black}, 0);
-    }
-
-    @-ms-viewport {
-      width: device-width;
     }
 
     article,
@@ -120,6 +141,7 @@ export const reboot = options => {
       text-decoration: underline dotted;
       cursor: help;
       border-bottom: 0;
+      text-decoration-skip-ink: none;
     }
 
     address {
@@ -155,13 +177,9 @@ export const reboot = options => {
       margin: 0 0 1rem;
     }
 
-    dfn {
-      font-style: italic;
-    }
-
     b,
     strong {
-      font-weight: bolder;
+      font-weight: ${fontWeightBolder};
     }
 
     small {
@@ -188,7 +206,6 @@ export const reboot = options => {
       color: ${linkColor};
       text-decoration: ${linkDecoration};
       background-color: transparent;
-      -webkit-text-decoration-skip: objects;
 
       &:hover {
         color: ${linkHoverColor};
@@ -200,8 +217,8 @@ export const reboot = options => {
       color: inherit;
       text-decoration: none;
 
-      &:focus,
-      &:hover {
+      &:hover,
+      &:focus {
         color: inherit;
         text-decoration: none;
       }
@@ -223,7 +240,6 @@ export const reboot = options => {
       margin-top: 0;
       margin-bottom: 1rem;
       overflow: auto;
-      -ms-overflow-style: scrollbar;
     }
 
     figure {
@@ -247,7 +263,7 @@ export const reboot = options => {
     caption {
       padding-top: ${tableCellPadding};
       padding-bottom: ${tableCellPadding};
-      color: ${textMuted};
+      color: ${tableCaptionColor};
       text-align: left;
       caption-side: bottom;
     }
@@ -291,17 +307,33 @@ export const reboot = options => {
       text-transform: none;
     }
 
+    select {
+      word-wrap: normal;
+    }
+
     button,
-    html [type='button'],
+    [type='button'],
     [type='reset'],
     [type='submit'] {
       -webkit-appearance: button;
     }
 
+    ${enablePointerCursorForButtons &&
+      css`
+        button,
+        [type='button'],
+        [type='reset'],
+        [type='submit'] {
+          &:not(:disabled) {
+            cursor: pointer;
+          }
+        }
+      `}
+
     button::-moz-focus-inner,
-    [type='button']::-moz-focus-inner,
-    [type='reset']::-moz-focus-inner,
-    [type='submit']::-moz-focus-inner {
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
       padding: 0;
       border-style: none;
     }
@@ -357,7 +389,6 @@ export const reboot = options => {
       -webkit-appearance: none;
     }
 
-    [type='search']::-webkit-search-cancel-button,
     [type='search']::-webkit-search-decoration {
       -webkit-appearance: none;
     }

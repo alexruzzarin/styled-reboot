@@ -1,26 +1,25 @@
 {
   "name": "styled-reboot",
-  "version": "3.0.2",
+  "version": "0.0.0-development",
   "description": "Bootstrap 4 reboot.css for styled-components",
-  "main": "dist/index.js",
+  "main": "index.js",
   "files": [
-    "dist/index.js",
+    "index.js",
     "index.d.ts"
   ],
   "typings": "index.d.ts",
   "scripts": {
-    "lint:css": "stylelint './src/**/*.js'",
-    "lint:js": "eslint .",
-    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint './src/**/*.ts'",
+    "lint:ts": "tslint --format codeFrame --project tsconfig.json 'src/**/*.{ts,tsx}'",
+    "lint": "npm run lint:css && npm run lint:ts",
     "test": "npm run lint",
-    "prebuild": "npm run test",
-    "build": "babel -d dist src",
-    "prepublish": "npm run build",
-    "prepare": "npm run build"
+    "build": "tsc",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexruzzarin/styled-reboot.git"
+    "url": "https://github.com/alexruzzarin/styled-reboot.git"
   },
   "keywords": [
     "styled",
@@ -47,28 +46,25 @@
   "homepage": "https://github.com/alexruzzarin/styled-reboot#readme",
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-eslint": "10.0.2",
-    "babel-plugin-add-module-exports": "1.0.2",
-    "babel-plugin-external-helpers": "6.22.0",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "1.7.0",
-    "eslint": "6.0.1",
-    "eslint-config-google": "0.13.0",
-    "eslint-config-prettier": "6.0.0",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.14.2",
+    "@semantic-release/changelog": "3.0.4",
+    "@semantic-release/git": "7.0.16",
+    "@types/styled-components": "4.1.16",
+    "commitizen": "3.1.1",
+    "cz-conventional-changelog": "2.1.0",
     "prettier": "1.18.2",
     "react": "16.8.6",
+    "semantic-release": "15.13.18",
     "styled-components": "4.3.2",
     "stylelint": "10.1.0",
     "stylelint-config-standard": "18.3.0",
     "stylelint-config-styled-components": "0.1.1",
-    "stylelint-processor-styled-components": "1.8.0"
+    "stylelint-processor-styled-components": "1.8.0",
+    "tslint": "5.18.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-eslint-rules": "5.4.0",
+    "typescript": "3.5.2"
   },
   "peerDependencies": {
-    "styled-components": ">=3 <5"
+    "styled-components": ">3 <=5"
   }
 }

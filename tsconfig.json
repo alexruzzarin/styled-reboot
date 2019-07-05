@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": ".",
+    "esModuleInterop": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "jsx": "react",
+    "outDir": ".",
+    "target": "es5",
+    "types": ["node"],
+    "lib": ["dom", "es6"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
