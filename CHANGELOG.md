@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/alexruzzarin/styled-reboot/compare/v4.0.1...v4.0.2) (2019-07-28)
+
+
+### Bug Fixes
+
+* **types:** make `enablePointerCursorForButtons` optional ([#105](https://github.com/alexruzzarin/styled-reboot/issues/105)) ([a461877](https://github.com/alexruzzarin/styled-reboot/commit/a461877))
+
 ## [4.0.1](https://github.com/alexruzzarin/styled-reboot/compare/v4.0.0...v4.0.1) (2019-07-05)
 
 
