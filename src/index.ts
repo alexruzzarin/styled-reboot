@@ -20,7 +20,7 @@ interface IRebootOptions {
   linkHoverDecoration?: string;
   tableCellPadding?: string;
   tableCaptionColor?: string;
-  enablePointerCursorForButtons: boolean;
+  enablePointerCursorForButtons?: boolean;
 }
 
 export const defaultRebootOptions: IRebootOptions = {
