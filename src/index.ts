@@ -48,7 +48,7 @@ export const defaultRebootOptions: IRebootOptions = {
   tableCellPadding: '0.75rem'
 };
 
-export const reboot = (options: IRebootOptions): FlattenSimpleInterpolation => {
+export const reboot = (options?: IRebootOptions): FlattenSimpleInterpolation => {
   const {
     black,
     fontFamilyBase,
