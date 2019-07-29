@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/alexruzzarin/styled-reboot/compare/v4.0.2...v4.0.3) (2019-07-29)
+
+
+### Bug Fixes
+
+* **readme:** add CI badge ([0819b3b](https://github.com/alexruzzarin/styled-reboot/commit/0819b3b))
+
 ## [4.0.2](https://github.com/alexruzzarin/styled-reboot/compare/v4.0.1...v4.0.2) (2019-07-28)
 
 
