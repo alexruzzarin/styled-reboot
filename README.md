@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/alexruzzarin/styled-reboot.svg?style=svg&circle-token=b24a76575acba70150e3b06340a67d54747643d0)](https://circleci.com/gh/alexruzzarin/styled-reboot)
+
 # styled-reboot
 Bootstrap 4 reboot.css for styled-components
 
