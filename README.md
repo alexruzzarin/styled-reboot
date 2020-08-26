@@ -17,71 +17,47 @@ from [LestaD](https://github.com/LestaD).
 
 ## Installation:
 
-`npm i styled-reboot` (use the `-S` flag if you're on npm 4 or earlier).
+`npm i styled-reboot`
 
-## Usage with styled-components v4:
+## Usage with styled-components v4 or v5:
 
 ```javascript
-// global-style.js
-import { createGlobalStyle } from 'styled-components';
-import reboot from 'styled-reboot';
-
-// Options are, of course, optional, these are the default options
-const options = {
-  black: '#000',
-  fontFamilyBase:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-  fontFamilyMonospace:
-    'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-  fontSizeBase: '1rem',
-  fontWeightBase: 400,
-  lineHeightBase: 1.5,
-  bodyColor: '#212529',
-  bodyBg: '#fff',
-  headingsMarginBottom: '0.5rem',
-  paragraphMarginBottom: '1rem',
-  labelMarginBottom: '0.5rem',
-  dtFontWeight: 700,
-  linkColor: '#007bff',
-  linkDecoration: 'none',
-  linkHoverColor: '#0056b3',
-  linkHoverDecoration: 'underline',
-  tableCellPadding: '0.75rem',
-  textMuted: '#6c757d'
-};
-
-const rebootCss = reboot(/* options */);
-
-const GlobalStyle = createGlobalStyle`
-  ${rebootCss}
-  /* other styles */
-`
-
-export default GlobalStyle;
-
 // app.js
-import GlobalStyle from './global-style';
+import * as React from 'react';
+import { Reboot } from 'styled-reboot';
 
 const App = () => (
   <>
-    <GlobalStyle />
-    <div>Hi!</div>
+    <Reboot />
+    <div>Hi, I'm an app!</div>
   </>
-}
+);
 
 export default App;
 ```
 
-You can also use named imports:
+Or you can create your own global style (Don't forget to create a theme, or extend ours! We provide a few defaults.):
 
 ```javascript
-// ES Modules
-import { reboot } from 'styled-reboot';
+// app.js
+import React from 'react';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { reboot, defaultRebootTheme } from 'styled-reboot';
 
-// CommonJS
-const { reboot } = require('styled-reboot');
+const GlobalStyle = createGlobalStyle`
+  ${reboot}
+  /* other styles */
+`;
+
+const App = () => (
+  <ThemeProvider theme={defaultRebootTheme}>
+    <GlobalStyle />
+    <div>Hi, I'm an app!</div>
+  </ThemeProvider>
+};
+
+export default App;
 ```
-
 
 ## Credits
 
