@@ -1,3 +1,15 @@
+# [5.0.0-beta.1](https://github.com/alexruzzarin/styled-reboot/compare/v4.0.3...v5.0.0-beta.1) (2020-08-26)
+
+
+### Features
+
+* styled v5 and replace options by theme ([e0c8edc](https://github.com/alexruzzarin/styled-reboot/commit/e0c8edcfbf7f0295ace66a53becba2ba3a5c81da))
+
+
+### BREAKING CHANGES
+
+* remove options and add theme support and defaults
+
 ## [4.0.3](https://github.com/alexruzzarin/styled-reboot/compare/v4.0.2...v4.0.3) (2019-07-29)
 
 
