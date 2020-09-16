@@ -51,7 +51,7 @@
     "@types/styled-components": "^5.1.2",
     "commitizen": "4.2.1",
     "cz-conventional-changelog": "3.2.1",
-    "prettier": "2.1.0",
+    "prettier": "2.1.2",
     "react": "16.13.1",
     "semantic-release": "17.1.1",
     "styled-components": "^5.1.1",
