@@ -29,7 +29,7 @@ import { Reboot } from 'styled-reboot';
 const App = () => (
   <>
     <Reboot />
-    <div>Hi, I'm an app!</div>
+    <div>Hi, I am an app!</div>
   </>
 );
 
@@ -52,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
 const App = () => (
   <ThemeProvider theme={defaultRebootTheme}>
     <GlobalStyle />
-    <div>Hi, I'm an app!</div>
+    <div>Hi, I am an app!</div>
   </ThemeProvider>
 };
 
