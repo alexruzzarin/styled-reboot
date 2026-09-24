@@ -53,7 +53,7 @@
     "cz-conventional-changelog": "3.3.0",
     "prettier": "2.3.0",
     "react": "17.0.2",
-    "semantic-release": "17.4.2",
+    "semantic-release": "19.0.3",
     "styled-components": "5.3.0",
     "stylelint": "13.13.1",
     "stylelint-config-standard": "22.0.0",
